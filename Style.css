@@ -1,0 +1,164 @@
+body {
+  margin: 0; padding: 0;
+  background: linear-gradient(135deg, #fceabb, #d65aa9);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+.container { padding: 30px; }
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5em; color: #d6336c;
+}
+
+.countdown-title {
+  font-size: 1.3em; color: #444;
+}
+
+.countdown {
+  font-size: 1.6em; font-weight: bold;
+  color: #003366; margin-bottom: 30px;
+}
+
+.slideshow {
+  position: relative;
+  width: 90%; max-width: 650px; height: 400px;
+  margin: 20px auto; overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  display: flex; /* <-- fix for centering */
+  justify-content: center;
+  align-items: center;
+}
+
+.blur-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-position: center;
+  background-size: cover;
+  filter: blur(25px);
+  transform: scale(1.1);
+  z-index: 0;
+  transition: background-image 1s ease-in-out;
+}
+
+.slide {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: none;
+  margin: auto;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.slide.active {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#soundToggle {
+  position: absolute; bottom: 10px; right: 10px;
+  background: rgba(255,255,255,0.8); border: none;
+  font-size: 22px; padding: 6px;
+  border-radius: 50%; cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.bilingual-message {
+  display: flex; justify-content: center; gap: 30px;
+  max-width: 700px; margin: 30px auto;
+  background: rgba(255,255,255,0.95);
+  padding: 20px; border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  font-size: 1.2em; line-height: 1.5;
+}
+
+.english-text, .hindi-text {
+  width: 45%; text-align: left; white-space: pre-line;
+}
+.hindi-text { font-family: 'Noto Sans Devanagari', sans-serif; }
+
+.thank-you-slide {
+  display: none;
+  font-size: 1.4em;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  line-height: 1.6;
+}
+
+.final-message {
+  display: none;
+  font-size: 1.5em; margin-top: 40px;
+  color: #444; padding: 25px;
+  background: #efefef; border-radius: 12px;
+  max-width: 650px; margin-left: auto; margin-right: auto;
+  font-style: italic;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  line-height: 1.8;
+}
+.final-message h2 {
+  font-size: 2em; color: #d6336c; margin-bottom: 15px;
+}
+.final-message p {
+  font-size: 1.2em; color: #555;
+} 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bilingual-message {
+    flex-direction: column; gap: 20px;
+  }
+  .english-text, .hindi-text {
+    width: 100%; text-align: center;
+  }
+  .slideshow { height: 300px; }
+  .countdown { font-size: 1.4em; }
+  h1 { font-size: 2.5em; }
+  .countdown-title { font-size: 1.1em; }
+
+  .final-message {
+    padding: 20px; font-size: 1.2em;
+  }
+  .final-message h2 { font-size: 1.8em; }
+  .final-message p { font-size: 1em; }
+  #soundToggle {
+    width: 35px; height: 35px; font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2em; }
+  .countdown { font-size: 1.2em; }
+  .slideshow { height: 250px; }
+  .bilingual-message { padding: 15px; font-size: 1em; }
+  .english-text, .hindi-text { font-size: 0.9em; }
+
+  .final-message {
+    font-size: 1.1em;
+    padding: 18px;
+  }
+  .final-message h2 {
+    font-size: 1.5em;
+  }
+  .final-message p {
+    font-size: 0.95em;
+  }
+}
+
+footer {
+  margin-top: 40px; font-size: 1.1em; color: #555;
+}
