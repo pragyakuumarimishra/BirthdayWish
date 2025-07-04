@@ -2,7 +2,7 @@ const slides = document.querySelectorAll('.slide');
 const blurBg = document.querySelector('.blur-bg');
 const hindiText = document.getElementById('hindiText');
 const englishText = document.getElementById('englishText');
-const finalMessage = document.getElementById('finalMessage');
+//const finalMessage = document.getElementById('finalMessage');
 const birthdayMessages = document.getElementById('birthdayMessages');
 const soundToggle = document.getElementById('soundToggle');
 const audio = document.getElementById('backgroundMusic');
@@ -44,14 +44,14 @@ function showSlide(i) {
     hindiText.textContent = messages[i][0];
     englishText.textContent = messages[i][1];
     birthdayMessages.style.display = "flex";
-    finalMessage.style.display = "none";
+   // finalMessage.style.display = "none";
   } else {
     // 🎉 Final slide
     blurBg.style.backgroundImage = 'none';
     hindiText.textContent = finalHindi;
     englishText.textContent = finalEnglish;
     birthdayMessages.style.display = "flex";
-    finalMessage.style.display = "block";
+   // finalMessage.style.display = "block";
 
     // ✅ Stop music and confetti
     audio.pause();
